@@ -1,3 +1,4 @@
+{% extends 'base/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hola munndo</title>
+    <title>{% block title %}Foro de preguntas{% endblock %}</title>
 </head>
 
 <body>
+    {% block content %}
     <h1>Foro de preguntas y respuestas</h1>    
     
 {% if request.session.is_empty %}
@@ -84,7 +86,7 @@ let Buscar=document.getElementById("Buscar");
         ajax.send();
     }
 </script>
-
+{% endblock %}
 </body>
 
 </html>
