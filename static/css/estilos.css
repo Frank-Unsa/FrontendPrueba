@@ -1,0 +1,133 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    margin: 0;
+}
+h1{
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+.container{
+    width: 90%;
+    /*max-width: 850px;*/
+    margin: 0 auto;
+}
+.header{
+    background: white;
+    color: #47525E;
+    
+    position: fixed ;/*posicion del navegador fijo*/
+    left: 0;
+    top: 0;
+    right: 0;
+
+}
+.header a{
+    background: white;
+    color: #47525E;
+    text-decoration: none;
+}
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;/*hace que los elmentos flex se vaya uno a la izquierda otro a la derecha*/
+    align-items: center;/*Centrar los elementos*/
+    flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
+}
+.logo{
+    letter-spacing: 15px;
+    font-size: 1em;
+}
+.menu-icon{
+    display: none;
+}
+.navigation ul{/*Hacemos que los ul no tengan*/
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+.navigation ul li{ /*Hacemos que esten uno del lado del otro*/
+    display: inline-block;
+}
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;/*Para animar los botones*/
+}
+.navigation ul li a:hover{
+    background: #ccc;
+}
+
+.botones {
+    border: 0; /*anchura, estilo y color borde*/
+    padding: 8px; /*espacio alrededor texto*/
+    background-color: #47525E; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+   
+    font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+    border-radius: 10px; /*bordes redondos*/
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.botones:hover {
+    background-color: #ccc; /* Green */
+    color: #47525E;
+}
+.main{
+    padding-top: 6rem;
+}
+.footer{
+    background: #47525E;
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 6rem;
+}
+@media only screen and (max-width: 1150px){
+    .menu-icon{
+        display: block;
+        cursor: pointer; 
+        padding: 0.5rem 1rem;
+    }
+    .navigation{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .navigation ul.show{
+       display: block; 
+    }
+     .navigation ul li{ /*Hacemos que esten uno del lado del otro*/
+       display: block;
+     }
+     .navigation ul li a{
+         display: block;
+         padding: 0.5rem 0;
+         transition: all 0.4s linear;/*Para animar los botones*/
+     }
+     .navigation ul li a:hover{
+         background: #ccc;
+     }
+
+     .botones {
+         border: 0; /*anchura, estilo y color borde*/
+         padding: 8px; /*espacio alrededor texto*/
+         background-color: #47525E; /*color botón*/
+         color: #ffffff; /*color texto*/
+         text-decoration: none; /*decoración texto*/
+        
+         font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+         border-radius: 10px; /*bordes redondos*/
+         
+         -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+     }
+     .botones:hover {
+         background-color: #ccc; /* Green */
+         color: #47525E;
+     }
+}

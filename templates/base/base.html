@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    
+    <title>{% block title %} Document {% endblock %}</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container logo-nav-container">
+            <a href="#" class="logo">Logo</a>
+            <span class="menu-icon">Ver Menu</span>
+            <nav class="navigation">
+                <ul class="show">
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Preguntas frecuentes</a></li>
+                    <li><a href="">Sobre Nosotros</a></li>
+                    <li><a href="">Contactos</a></li>
+                    <li><input type="text" value="Buscar" /></li>
+                    <!--Buscar-->
+                
+                    {% if request.session.is_empty %}
+                    <!--Botones para registrarse e iniciar sesion-->
+                    <li><a href="/registro/"><input type="button" class="botones" value="Registrarse"></a></li>
+                    <!--style="float: right;"-->
+                    <li>
+
+                        <a href="/login/"><input type="button" class="botones" value="Iniciar Sesión"></a>
+                    </li>
+                    <!--style="float: right;"-->
+                    {% else %}
+                    <!-- AL desarrollar el frontend se debe mejorar esta presentacion-->
+                    <li><a href="/logout/"><input type="button" style="float: right;" value="Logout"></a></li>
+                    <li>
+                        <p style="float: right;">Bienvenido {{ user.username }} </p>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h1>TITULO</h1>
+            <p>Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de
+                sentido. También es una composición de caracteres imprimibles generados por un algoritmo de cifrado que,
+                aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario</p>
+            <p>Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de
+                sentido. También es una composición de caracteres imprimibles generados por un algoritmo de cifrado que,
+                aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario</p>
+            <p>Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de
+                sentido. También es una composición de caracteres imprimibles generados por un algoritmo de cifrado que,
+                aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario</p>
+        </div>
+    </main>
+    {% block content %}
+    <h5>Contenido</h5>
+    {% endblock %}
+    {% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <p>pagina diseñada XXX</p>
+        </div>
+    </footer>
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/scripts.js' %}"></script>
+</body>
+
+</html>

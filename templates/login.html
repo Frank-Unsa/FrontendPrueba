@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} login {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <form action="" class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit">Iniciar Sesión</button>
+    </form>
+    {% endblock %}
+   
+    
+   
+</body>
+</html>
