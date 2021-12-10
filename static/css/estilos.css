@@ -109,25 +109,6 @@ h1{
          padding: 0.5rem 0;
          transition: all 0.4s linear;/*Para animar los botones*/
      }
-     .navigation ul li a:hover{
-         background: #ccc;
-     }
-
-     .botones {
-         border: 0; /*anchura, estilo y color borde*/
-         padding: 8px; /*espacio alrededor texto*/
-         background-color: #47525E; /*color botón*/
-         color: #ffffff; /*color texto*/
-         text-decoration: none; /*decoración texto*/
-        
-         font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
-         border-radius: 10px; /*bordes redondos*/
-         
-         -webkit-transition-duration: 0.4s; /* Safari */
-         transition-duration: 0.4s;
-     }
-     .botones:hover {
-         background-color: #ccc; /* Green */
-         color: #47525E;
-     }
+   
+    
 }

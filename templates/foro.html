@@ -1,4 +1,3 @@
-{% extends 'base/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +11,17 @@
 <body>
     {% block content %}
     <h1>Foro de preguntas y respuestas</h1>    
-    
-
+   <!--
+{% if request.session.is_empty %}
+    Botones para registrarse e iniciar sesion
+    <a href="/registro/"><input type="button" style="float: right;" value="Registrarse"></a>
+    <a href="/login/"><input type="button" style="float: right;" value="Iniciar Sesión"></a>
+{% else %}
+    AL desarrollar el frontend se debe mejorar esta presentacion
+    <a href="/logout/"><input type="button" style="float: right;" value="Logout"></a>
+    <p style="float: right;" >Bienvenido {{ user.username }} </p>
+{% endif %}
+--> 
         <input id="enun" type="text" name="enun" placeholder="Enunciado">
         
         <label for="fname"> Area:</label>
