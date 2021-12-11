@@ -1,8 +1,8 @@
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #333;
-    font-size: 1.2rem;
-    line-height: 1.4em;
+    font-size: 1rem;
+    line-height: 1.2em;
     margin: 0;
 }
 h1{
@@ -76,14 +76,16 @@ h1{
     background-color: #ccc; /* Green */
     color: #47525E;
 }
-.main{
-    padding-top: 6rem;
-}
+
+.wrapper {
+    padding-top: 4rem;
+    min-height: calc(80% - 4rem);
+    background: #E5E9F2;
+  }
 .footer{
     background: #47525E;
     padding: 4rem 0;
     text-align: center;
-    margin-top: 6rem;
 }
 @media only screen and (max-width: 1150px){
     .menu-icon{

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <title>{% block title %} Document {% endblock %}</title>
 </head>
 
@@ -46,17 +46,14 @@
             </nav>
         </div>
     </header>
-    <main class="main">
-        
-    </main>
-    {% block content %}
-    <h5>Contenido</h5>
-    {% endblock %}
+    <div class="wrapper">
+        {% block content %}
+        <h5>Contenido</h5>
+        {% endblock %}
+    </div>
     {% block footer %}
     <footer class="footer">
-        <div class="container">
-            <p>pagina diseñada XXX</p>
-        </div>
+        <p>pagina diseñada XXX</p>
     </footer>
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
