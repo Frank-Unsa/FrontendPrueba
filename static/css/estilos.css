@@ -81,6 +81,7 @@ h1{
     padding-top: 4rem;
     min-height: calc(80% - 4rem);
     background: #E5E9F2;
+    padding-bottom: 2rem;
   }
 .footer{
     background: #47525E;
