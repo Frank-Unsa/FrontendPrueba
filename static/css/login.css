@@ -16,7 +16,7 @@
 
 .form {
     width: 300px;
-    padding: 40px;
+    padding: 20px;
     background: white;
     text-align: center;
 }
@@ -27,14 +27,14 @@
     font-weight: 500;
 }
 
-.form input[type="text"], .form input[type="password"],.form button[type="submit"] {
+.form input, .form button[type="submit"] {
     border: 0;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
     border: 2px solid #8492A6;
-    padding: 14px 10px;
+    padding: 5px 10px;
     width: 200px;
     outline: none;
     color: #47525E;
@@ -42,7 +42,7 @@
     transition: 0.25s;
 }
 
-.form input[type="text"]:focus, .form input[type="password"]:focus {
+.form input:focus {
     width: 280px;
     border-color: #8492A6;
 }
@@ -54,7 +54,7 @@
     margin: 20px auto;
     text-align: center;
     border: 2px solid #47525E;
-    padding: 14px 40px;
+    padding: 5px 40px;
     outline: none;
     color: white;
     border-radius: 24px;
