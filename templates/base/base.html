@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logoPrueba.png' %}" />
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{% block title %} Document {% endblock %}</title>
 </head>
 
@@ -15,7 +17,8 @@
 
     <header class="header">
         <div class="container logo-nav-container">
-            <a href="#" class="logo">Logo</a>
+            <img class="logo2" src="{% static 'logoPrueba.png' %}" alt="Imagen">
+            <a href=".." class="logo">Stack Question</a>
             <span class="menu-icon">Ver Menu</span>
             <nav class="navigation">
                 <ul>
@@ -25,22 +28,22 @@
                     <li><a href="../contact/">Contactos</a></li>
                     <li><input type="text" value="Buscar" /></li>
                     <!--Buscar-->
-                
+
                     {% if request.session.is_empty %}
                     <!--Botones para registrarse e iniciar sesion-->
                     <li><a href="/registro/"><input type="button" class="botones" value="Registrarse"></a></li>
                     <!--style="float: right;"-->
-                    <li>
-
-                        <a href="/login/"><input type="button" class="botones" value="Iniciar Sesión"></a>
+                    <li><a href="/login/"><input type="button" class="botones" value="Iniciar Sesión"></a>
                     </li>
                     <!--style="float: right;"-->
                     {% else %}
                     <!-- AL desarrollar el frontend se debe mejorar esta presentacion-->
-                    <li><a href="/logout/"><input type="button" style="float: right;" value="Logout"></a></li>
+                    <li></li>
+                    <li></li>
                     <li>
-                        <p style="float: right;">Bienvenido {{ user.username }} </p>
+                        <p style="text-align:right">Bienvenido {{ user.username }} </p>
                     </li>
+                    <li><a href="/logout/"><input type="button" class="botones" value="Logout"></a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -53,12 +56,30 @@
     </div>
     {% block footer %}
     <footer class="footer">
-        <p>pagina diseñada XXX</p>
+        <div class="container2 logo-nav-container">
+            <img class="logo1" src="{% static 'logoPrueba.png' %}" alt="Imagen">
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="../preguntas_frecuentes/">Preguntas frecuentes</a></li>
+                    <li><a href="../about/">Sobre Nosotros</a></li>
+                    <li><a href="../contact/">Contactos</a></li>
+                </ul>
+            </nav>
+            <div class="redesSociales">
+                <a href="https://www.facebook.com/groups/307217284628410" target="_blank"
+                    class="fa fa-facebook-square fa-2x"></a>
+                <a href="https://twitter.com/QuestionStack" target="_blank" class="fa fa-twitter-square fa-2x"></a>
+            </div>
+        </div>
+
+        <p>(C) Stack Question 2021</p>
     </footer>
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="{% static 'scripts/script.js' %}"></script>
-     
+
 </body>
 
 </html>

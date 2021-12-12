@@ -11,82 +11,73 @@
 
 <body>
     {% block content %}
-    <h1>Foro de preguntas y respuestas</h1>    
-   <!--
-{% if request.session.is_empty %}
-    Botones para registrarse e iniciar sesion
-    <a href="/registro/"><input type="button" style="float: right;" value="Registrarse"></a>
-    <a href="/login/"><input type="button" style="float: right;" value="Iniciar Sesión"></a>
-{% else %}
-    AL desarrollar el frontend se debe mejorar esta presentacion
-    <a href="/logout/"><input type="button" style="float: right;" value="Logout"></a>
-    <p style="float: right;" >Bienvenido {{ user.username }} </p>
-{% endif %}
---> 
+    <h1>Foro de preguntas y respuestas</h1>
+    <div class="busqueda">
         <input id="enun" type="text" name="enun" placeholder="Enunciado">
-        
         <label for="fname"> Area:</label>
-        
+
         <select id="id_ar" name="id_ar">
             {% for area in areas %}
-            <option value="{{area.id}}" >{{area.nombre}}</option>
-            {%endfor%}
-            <option value="0" selected></option> 
-        </select>
-        <label for="fname"> Tema:</label>
-        <select id="id_tem" name="id_tem" >
-            {% for tema in temas %}
-            <option value={{tema.id}} >{{tema.nombre}}</option> 
+            <option value="{{area.id}}">{{area.nombre}}</option>
             {%endfor%}
             <option value="0" selected></option>
         </select>
-        
+        <label for="fname"> Tema:</label>
+        <select id="id_tem" name="id_tem">
+            {% for tema in temas %}
+            <option value={{tema.id}}>{{tema.nombre}}</option>
+            {%endfor%}
+            <option value="0" selected></option>
+        </select>
+
         <label for="fname"> Fecha:</label>
-        <input type="date" id ="date" name="date">
+        <input type="date" id="date" name="date">
         <button value="Buscar" id="Buscar">Buscar</button>
+
+    </div>
 
     {%block cuerpo%}
     <div id="busqueda_ajax">
-    <p>Preguntas</p>
-    {%include "busqueda.html"%}
+        <p>Preguntas</p>
+        {%include "busqueda.html"%}
     </div>
     {%endblock%}
-   
-<script>
-let Buscar=document.getElementById("Buscar");
-    Buscar.addEventListener("click",buscar);
-    function buscar() {
-        //peticion xmlhttprequest general
-        let ajax = new XMLHttpRequest();
-        ajax.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("busqueda_ajax").innerHTML = this.responseText;
+
+    <script>
+        let Buscar = document.getElementById("Buscar");
+        Buscar.addEventListener("click", buscar);
+        function buscar() {
+            //peticion xmlhttprequest general
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("busqueda_ajax").innerHTML = this.responseText;
+                }
             }
+            let url = "/search_e/?";
+            let enun = document.getElementById("enun");
+            let id_ar = document.getElementById("id_ar");
+            let id_tem = document.getElementById("id_tem");
+            let date = document.getElementById("date");
+
+            if (enun.value) {
+                url += "enum=" + enun.value + "&";
+            }
+            if (id_ar.value != 0) {
+                url += "id_ar=" + id_ar.value + "&";
+            }
+            if (id_tem.value != 0) {
+                url += "id_tem=" + id_tem.value + "&";
+            }
+            if (date.value) {
+                url += "date=" + date.value;
+            }
+            console.log(url);
+            ajax.open("GET", url, true);
+            ajax.send();
         }
-        let url="/search_e/?";
-        let enun=document.getElementById("enun");
-        let id_ar=document.getElementById("id_ar");
-        let id_tem=document.getElementById("id_tem");
-        let date=document.getElementById("date");
-        
-        if (enun.value){
-            url+="enum="+enun.value+"&";
-        }
-        if (id_ar.value != 0){
-            url+="id_ar="+id_ar.value+"&";
-        }
-        if(id_tem.value !=0){
-            url+="id_tem="+id_tem.value+"&";
-        }
-        if(date.value){
-            url+="date="+date.value;
-        }
-        console.log(url);
-        ajax.open("GET", url, true);
-        ajax.send();
-    }
-</script>
-{% endblock %}
+    </script>
+    {% endblock %}
 </body>
 
 </html>

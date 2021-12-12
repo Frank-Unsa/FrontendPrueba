@@ -6,15 +6,50 @@
 
 <body>
     {% block content %}
-    <div class="cuerpo">
-        <form action="" class="form" method="post">
-            <h1 class="form-title">Iniciar Sesion</h1>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" id="submit">Iniciar Sesión</button>
-        </form>
-    </div>
+    <h1 class="h1contac">Contáctenos</h1>
+    <div class="padre">
 
+        <div class="hijo">
+
+            <h3>Email</h3>
+
+            <div class="centrar"> </div>
+            <p>stackquestion2021@gmail.com</p>
+
+            <h3>Numero</h3>
+            <p>stackquestion2021@gmail.com</p>
+            <h3>Redes Sociales</h3>
+
+            <p>Facebook</p>
+            <a href="https://www.facebook.com/groups/stackquestion">stackquestion</a>
+
+
+            <p>Twitter</p>
+            <a href="https://twitter.com/QuestionStack">@QuestionStack</a>
+
+            <div><a href="https://www.facebook.com/groups/307217284628410" target="_blank"
+                    class="fa fa-facebook-square fa-4x"></a>
+                <a href="https://twitter.com/QuestionStack" target="_blank" class="fa fa-twitter-square fa-4x"></a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <!-- <div class="contacto contac">
+        <div class="container2 logo-nav-container">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="../preguntas_frecuentes/">Preguntas frecuentes</a></li>
+                    <li><a href="../about/">Sobre Nosotros</a></li>
+                    <li><a href="../contact/">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+-->
     {% endblock %}
 </body>
 

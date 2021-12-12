@@ -36,7 +36,7 @@ h1{
     flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
 }
 .logo{
-    letter-spacing: 15px;
+    letter-spacing: 1px;
     font-size: 1em;
 }
 .menu-icon{
@@ -53,6 +53,7 @@ h1{
 .navigation ul li a{
     display: block;
     padding: 0.5rem 1rem;
+    
     transition: all 0.4s linear;/*Para animar los botones*/
 }
 .navigation ul li a:hover{
@@ -85,7 +86,7 @@ h1{
   }
 .footer{
     background: #47525E;
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 @media only screen and (max-width: 1150px){
@@ -114,4 +115,146 @@ h1{
      }
    
     
+}
+.container2{
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.logo-nav-container2{
+    display: flex;
+    justify-content: space-between;/*hace que los elmentos flex se vaya uno a la izquierda otro a la derecha*/
+    align-items: center;/*Centrar los elementos*/
+    flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
+}
+.footer .navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+.logo1{
+    width: 65px;
+    height: 90px;
+}
+.logo2{
+    width: 25px;
+    height: 40px;
+}
+/*redes sociales*/
+.redesSociales{
+    text-align: right;
+}
+.fa-facebook-square {
+    font-size: 52px;
+    color: gray;
+}
+.fa-facebook-square:hover {
+    color:#3B5998;
+}
+.fa-twitter-square {
+    font-size: 52px;
+    font-weight: 100px;
+    color: gray;
+}
+.fa-twitter-square:hover {
+    color:#55acee;
+    }
+.footer p{
+    color: white;
+    
+}
+/********* Busqueda **********/
+.busqueda{
+    background: red border-box 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/** Contacto**/
+.h1contac{
+    text-align: center;
+}
+.padre {
+    
+    height: 100%;
+    
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .hijo {
+    background: white;
+    
+ 
+    width: 35%;
+    height: 100%;
+    display: grid;
+    place-items: center
+    
+
+  }
+.hijo .centrar p {
+    text-align: justify;
+}
+/*Sobre Nosotros*/
+
+.padre-about{
+    
+    margin: auto;
+    width: 95%;
+    height: 80%;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hijo-about{
+ 
+    width: 85%;
+    height: 600px;
+    left: 100px; /*ancho padre - ancho hija /2 = valor pixel left*/
+    top: 100px; /*alto padre - alto hija /2 = valor pixel top*/
+   
+  
+    /*background-color: blue;*/ 
+    }
+.hijo-about .izquierda{
+    float:left;
+    text-align: center;
+}
+.hijo-about .izquierda{
+    float:right;
+}
+.hijo-about h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.tabla-center{
+    text-align: center;
+}
+.Equipo h1{
+    text-align: center;
+}
+.imgWrapper4, .imgWrapper3 {
+    font-size: 0;
+    text-align: center;
+}
+.imgWrapper4 .imgResponsiva,
+.imgWrapper3 .imgResponsiva {
+    display: inline-block;
+    padding: 4px 4px;
+    font-size: inherit;
+}
+.imgWrapper4 .imgResponsiva {width: 20%; max-width: 225px;}
+.imgWrapper3 .imgResponsiva {width: 33.3%; max-width: 345px;}
+
+.imgResponsiva img {
+    height: auto;
+    width: 100%;
+}
+.imgResponsiva h1{
+    font-size: 12px;
+    color: 47525E;
 }
