@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import include,url
 #clases propias
 
-from SistemaTutoriales.views import index
+from SistemaTutoriales.views import index, about_us, contact_us, pregunta_frecuente
 from usuarios import views as vu
 
 #Para el login que trae Django
@@ -42,4 +42,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='logout.html'), name='logout'),
     #ruta del search
     path('search_e/', vu.search_e),
+    path('about/', about_us,name="Nosotros"),
+    path('contact/', contact_us,name="Contactenos"),
+    path('preguntas_frecuentes/', pregunta_frecuente, name="Frecuentes"),
 ]
