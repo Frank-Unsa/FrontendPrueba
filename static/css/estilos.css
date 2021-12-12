@@ -197,7 +197,7 @@ h1{
 .hijo .centrar p {
     text-align: justify;
 }
-/*Sobre Nosotros*/
+/************************************Sobre Nosotros******************/
 
 .padre-about{
     
@@ -218,7 +218,7 @@ h1{
    
   
     /*background-color: blue;*/ 
-    }
+}
 .hijo-about .izquierda{
     float:left;
     text-align: center;
@@ -254,7 +254,7 @@ h1{
     width: 100%;
 }
 .imgResponsiva h1{
-    font-size: 12px;
+    font-size: 11px;
     color: 47525E;
 }
 /************************INDEX*********************************/
@@ -388,6 +388,71 @@ h1{
     .prev, .next,.text {font-size: 11px}
 }
 
+.index-cuerpo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.namepage{
+    font-family: "Comic Sans MS", "Comic Sans";
+    text-align: center;
+}
+.index-header{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    margin-top: -4rem;
+}
+.index-content-header{
+    width: 20%;
+}
+.index-header .index-separacion{
+    display: inline-block;
+    padding: 4px 4px;
+}
+.botones-index{
+   
+    border: 0; /*anchura, estilo y color borde*/
+    padding: 8px; /*espacio alrededor texto*/
+    background-color: #47525E; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+   
+    font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
+    border-radius: 10px; /*bordes redondos*/
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.botones-index:hover {
+    background-color: #ccc; /* Green */
+    color: #47525E;
+}  
+/*******Preguntas Frecuentes*********/
+.padre-fre{
+    
+    margin: auto;
+    width: 95%;
+    height: 65%;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hijo-fre{
+ 
+    width: 50%;
+    height: 100%;
+    /*background-color: blue;*/
+}
 
-
-
+.hijo-fre p.centrado  {
+    text-align: center;
+    font-size: 24px;
+}
+.hijo-fre p.centrado-h {
+    text-align: center;
+    font-size: 15px;
+}
