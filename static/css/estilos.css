@@ -184,17 +184,16 @@ h1{
     
   }
   
-  .hijo {
+.hijo {
     background: white;
-    
- 
     width: 35%;
     height: 100%;
     display: grid;
     place-items: center
-    
-
-  }
+}
+.hijo p{
+    display: inline;
+}
 .hijo .centrar p {
     text-align: justify;
 }
