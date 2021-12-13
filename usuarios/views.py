@@ -237,3 +237,37 @@ def search_e(request):
     if not len(preguntas):
         preguntas=[]
     return render(request,"busqueda.html",{"preguntas":preguntas})       
+
+def editarPerfil(request, id):
+    if request.method=='POST':
+        print("Se edita el usuario")
+        editUser=usuarios.Usuario.objects.get(id=id)
+        editUser.nombre=request.POST['nombre']
+        editUser.contrasenia=request.POST['contrasenia']
+        editUser.Celular=request.POST['celular']
+        try :
+            editUser.fecha_de_nacimiento=request.POST['nacimiento']
+        except:
+            editUser.fecha_de_nacimiento=date(2020,1,1)
+        hoy=dt.now()
+        print(hoy.day)
+        print(hoy.month)
+        print(hoy.year)
+        #editUser.fecha_de_modificacion=hoy.strftime('%d-%m-%Y') #- datetime.date.today
+        #editUser.fecha_de_modificacion=dt.date.today()
+        editUser.fecha_de_modificacion=dt.now()
+        editUser.save()
+        messages.info(request,'Se guardaron los cambios')
+        return render(request,"index.html",{})
+    else:
+        currUser=usuarios.Usuario.objects.get(id=id)
+        print(currUser.fecha_de_nacimiento)
+        fechaCumpleanios=dt(currUser.fecha_de_nacimiento.year, currUser.fecha_de_nacimiento.month, currUser.fecha_de_nacimiento.day)
+        #print(fechaCumpleanios)
+        """
+        print(fechaCumpleanios.day)
+        print(fechaCumpleanios.month)
+        print(fechaCumpleanios.year)
+        """
+        return render(request,"editarPerfil.html",{'currUser':currUser, 'fechaCumpleanios':fechaCumpleanios})
+        #return render(request,"editarPerfil.html",{'currUser':currUser})

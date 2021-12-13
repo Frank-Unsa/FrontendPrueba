@@ -45,4 +45,5 @@ urlpatterns = [
     path('about/', about_us,name="Nosotros"),
     path('contact/', contact_us,name="Contactenos"),
     path('preguntas_frecuentes/', pregunta_frecuente, name="Frecuentes"),
+    path('editarPerfil/<int:id>',vu.editarPerfil,name='editarPerfil')
 ]
