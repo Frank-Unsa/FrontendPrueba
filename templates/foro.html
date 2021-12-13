@@ -15,22 +15,26 @@
     <div class="foro-content">
         <div class="busqueda">
             <input id="enun" type="text" name="enun" placeholder="Buscar...">
+
             <label for="fname"> Area:</label>
+            <div class="sidebar-box">
+                <select class="select-css" id="id_ar" name="id_ar">
+                    {% for area in areas %}
+                    <option value="{{area.id}}">{{area.nombre}}</option>
+                    {%endfor%}
+                    <option value="0" selected></option>
+                </select>
+            </div>
 
-            <select id="id_ar" name="id_ar">
-                {% for area in areas %}
-                <option value="{{area.id}}">{{area.nombre}}</option>
-                {%endfor%}
-                <option value="0" selected></option>
-            </select>
             <label for="fname"> Tema:</label>
-            <select id="id_tem" name="id_tem">
-                {% for tema in temas %}
-                <option value={{tema.id}}>{{tema.nombre}}</option>
-                {%endfor%}
-                <option value="0" selected></option>
-            </select>
-
+            <div class="sidebar-box">
+                <select class="select-css" id="id_tem" name="id_tem">
+                    {% for tema in temas %}
+                    <option value={{tema.id}}>{{tema.nombre}}</option>
+                    {%endfor%}
+                    <option value="0" selected></option>
+                </select>
+            </div>
             <label for="fname"> Fecha:</label>
             <input type="date" id="date" name="date">
             <button value="Buscar" id="Buscar">Buscar</button>
