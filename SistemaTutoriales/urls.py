@@ -45,5 +45,8 @@ urlpatterns = [
     path('about/', about_us,name="Nosotros"),
     path('contact/', contact_us,name="Contactenos"),
     path('preguntas_frecuentes/', pregunta_frecuente, name="Frecuentes"),
+    
+    #ruta ver historial, editar perfil
+    path('verHistorial/<int:id>',vu.verHistorial,name='verHistorial'),
     path('editarPerfil/<int:id>',vu.editarPerfil,name='editarPerfil')
 ]
