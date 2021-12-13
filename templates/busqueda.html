@@ -1,6 +1,12 @@
 {% for pregunta in preguntas %}
-        <a href="/pregunta/?id={{pregunta.id}}">{{pregunta.id}}{{pregunta.enunciado}}</a><br>
-        <span>Descripción: </span><span>{{pregunta.descripcion}}</span><br>
-        <span>Tema: </span><span>{{pregunta.tema}}</span><br>
+<div class="content-pre">
+        <div class="content-pregun">
+                <a href="/pregunta/?id={{pregunta.id}}">{{pregunta.id}}{{pregunta.enunciado}}</a><br>
+        </div>
+        <div class="content-desc">
+                <span>Descripción: </span><span>{{pregunta.descripcion}}</span><br>
+                <span>Tema: </span><span>{{pregunta.tema}}</span><br>
         <span>Area: </span><span>{{pregunta.area}}</span><br>
+        </div>
+</div>
 {%endfor%}

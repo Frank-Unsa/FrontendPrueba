@@ -11,10 +11,10 @@
 
 <body>
     {% block content %}
-    <h1>Foro de preguntas y respuestas</h1>
+    <h1 style="text-align: center;">Foro de preguntas</h1>
     <div class="foro-content">
         <div class="busqueda">
-            <input id="enun" type="text" name="enun" placeholder="Enunciado">
+            <input id="enun" type="text" name="enun" placeholder="Buscar...">
             <label for="fname"> Area:</label>
 
             <select id="id_ar" name="id_ar">
@@ -37,16 +37,18 @@
 
         </div>
     </div>
-
-    {%block cuerpo%}
-    <div class="preguntas">
-        <div id="busqueda_ajax">
-            <p>Preguntas</p>
-            {%include "busqueda.html"%}
+    <div class="back-preg">
+        {%block cuerpo%}
+        <div class="preguntas">
+            <div id="busqueda_ajax">
+                <p style="font-size:23px">Preguntas</p>
+                <a href=" "><input style="float:right;margin-top:-47px" type="button" class="botones-index"
+                        value="Realizar Pregunta"></a>
+                {%include "busqueda.html"%}
+            </div>
         </div>
+        {%endblock%}
     </div>
-    {%endblock%}
-
     <script>
         let Buscar = document.getElementById("Buscar");
         Buscar.addEventListener("click", buscar);
