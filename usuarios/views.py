@@ -5,6 +5,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime as dt
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.models import auth
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -271,3 +273,16 @@ def editarPerfil(request, id):
         """
         return render(request,"editarPerfil.html",{'currUser':currUser, 'fechaCumpleanios':fechaCumpleanios})
         #return render(request,"editarPerfil.html",{'currUser':currUser})
+def verHistorial(request, id):
+    #Importamos todos los usuarios, preguntas y respuestas
+    allUsers=usuarios.Usuario.objects.all()
+    allQuestions=usuarios.Pregunta.objects.all()
+    allAnswers=usuarios.Respuesta.objects.all()
+    userQuestions=usuarios.Pregunta.objects.filter(usuario=id)
+    userAnswers=usuarios.Respuesta.objects.filter(usuario=id)
+    currUser=usuarios.Usuario.objects.get(id=id)
+    print(currUser.nombre)
+    currUser=auth.authenticate(username=currUser.usuario,password=currUser.contrasenia)
+    auth.login(request,currUser)
+    currUser=usuarios.Usuario.objects.get(id=id)
+    return render(request, "verHistorial.html", {'currUser': currUser, 'questions': userQuestions, 'answers': userAnswers ,'allQuestions' : allQuestions, 'allAnswers':allAnswers, 'users':allUsers })
