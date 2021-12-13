@@ -24,11 +24,11 @@
             <span class="menu-icon">Ver Menu</span>
             <nav class="navigation">
                 <ul>
-                    <li><a href="">Inicio</a></li>
+                    <li><a href="/">Inicio</a></li>
                     <li><a href="../preguntas_frecuentes/">Preguntas frecuentes</a></li>
                     <li><a href="../about/">Sobre Nosotros</a></li>
                     <li><a href="../contact/">Contactos</a></li>
-                    <li><input type="text" value="Buscar" /></li>
+                    
                     <!--Buscar-->
 
                     {% if request.session.is_empty %}
@@ -43,7 +43,7 @@
                     <li></li>
                     <li></li>
                     <li>
-                        <p style="text-align:right">Bienvenido {{ user.username }} </p>
+                        <a href="/verHistorial/{{user.id}}"><p style="text-align:right">Bienvenido {{ user.username }} </p></a>
                     </li>
                     <li><a href="/logout/"><input type="button" class="botones" value="Logout"></a></li>
                     {% endif %}
