@@ -2,22 +2,21 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #333;
     font-size: 1rem;
-    line-height: 1.2em;
+    line-height: 0.9rem;
     margin: 0;
 }
 h1{
-    font-size: 2rem;
-    line-height: 1.3em;
+    font-size: 1rem;
+    line-height: 1.0rem;
 }
 .container{
-    width: 90%;
+    width: 85%;
     /*max-width: 850px;*/
     margin: 0 auto;
 }
 .header{
     background: white;
     color: #47525E;
-    
     position: fixed ;/*posicion del navegador fijo*/
     left: 0;
     top: 0;
@@ -36,14 +35,14 @@ h1{
     flex-wrap: wrap;/*Si los elemntos sobrepasan de la linea pase a la siguiente*/
 }
 .logo{
-    letter-spacing: 1px;
-    font-size: 1em;
+    letter-spacing: 0px;
+    font-size: 1.5em;
 }
 .menu-icon{
     display: none;
 }
 .navigation ul{/*Hacemos que los ul no tengan*/
-   margin: 0;
+   margin: 0.9;
    padding: 0;
    list-style: none;
 }
@@ -68,7 +67,7 @@ h1{
     text-decoration: none; /*decoración texto*/
    
     font-family: Georgia, 'Times New Roman', Times, serif; /*tipografía texto*/
-    border-radius: 10px; /*bordes redondos*/
+    border-radius: 8px; /*bordes redondos*/
     
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -81,7 +80,7 @@ h1{
 .wrapper {
     padding-top: 4rem;
     min-height: calc(80% - 4rem);
-    background: #E5E9F2;
+    background: #a9b2c7;
     padding-bottom: 2rem;
   }
 .footer{
@@ -89,7 +88,7 @@ h1{
     padding: 2rem 0;
     text-align: center;
 }
-@media only screen and (max-width: 1150px){
+@media only screen and (max-width: 1210px){
     .menu-icon{
         display: block;
         cursor: pointer; 
@@ -172,14 +171,14 @@ h1{
     text-align: center;
     outline: none;
     border: #47525E 2px solid;
-    padding:#47525E 5px 5px;
+    padding:#47525E 1px 1px;
     width: 200px;
     
     border-radius: 24px;
 }
 
 .foro-content input:focus {
-    width: 250px;
+    width: 50px;
     border-color: #47525E;
 }
 #date{
@@ -280,7 +279,7 @@ h1{
 }
 /********* Busqueda **********/
 .busqueda{
-    width: 70%;
+    width: 20%;
     background: #8492A6;
     display: flex;
     justify-content: center;
@@ -334,7 +333,7 @@ h1{
     align-items: center;
     
   }
-  
+
 .hijo {
     background: white;
     margin-left: 32%;
@@ -609,4 +608,65 @@ h1{
 .hijo-fre p.centrado-h {
     text-align: center;
     font-size: 15px;
+}
+/*nuevoooooo*/
+.hermano {
+    background: rgb(247, 244, 244);
+    margin-left: 32%;
+    width: 35%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: block;
+    padding-top: 4%;
+}
+.contenedor{
+    display: block;
+    padding: 3%;
+    width: 90%;
+    max-width: 2000px;
+    border: 2px;
+    margin: auto;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.contenedor > div {
+    display: block;
+    padding: 3%;
+    color: rgb(56, 69, 75);
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .25);
+    height: 100%;
+}
+.contenedor2{
+    width: 84%;
+    max-width: 2000px;
+    border: 2px;
+    margin: auto;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.contenedor2 > div {
+    display: block;
+    color: rgb(56, 69, 75);
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .25);
+    height: 90%;
+}
+.contenedor3{
+    display: block;
+    width: 90%;
+    max-width: 2000px;
+    border: 2px;
+    margin: auto;
+    font-size: 50px;
+    line-height: 50px;
+    height: 90%;
+}
+.contenedor3 > div {
+    display: block;
+    background-color: #fff;
+    height: 90%;
 }
