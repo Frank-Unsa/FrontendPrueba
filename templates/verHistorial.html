@@ -40,28 +40,32 @@
                 <div class="a">
                     <div class="aa">
                     <h1>Preguntas recientes</h1>
-                        {% for question in questions %}
-                        <!--<button type="button" name="button" value="Editar Perfil" onclick="editarPerfil">Editar perfil</button>-->
-                        <a href="../pregunta/?id={{question.id}}">{{ question.enunciado }}</a><br><a href="../eliminarPregunta/{{ question.id }}">Eliminar</a><br> 
-                        {% endfor %}
+                        <div class="bb">
+                            {% for question in questions %}
+                            <!--<button type="button" name="button" value="Editar Perfil" onclick="editarPerfil">Editar perfil</button>-->
+                            <a href="../pregunta/?id={{question.id}}">{{ question.enunciado }}</a><br><a href="../eliminarPregunta/{{ question.id }}">Eliminar</a><br> 
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
                 <div class="b">
                     <h1>Actividad reciente</h1>
-                    {% for answer in resFiltradas %}<!-- respuestas de usuario-->
-                      <h1>Respondiste a la pregunta:  </h1>
-                      {% for someQuestion in allQuestions %}
-                        {% if someQuestion.id == answer.pregunta_id %}
-                        <a style="color:red" href="../pregunta/?id={{question.id}}">{{ someQuestion.enunciado }}</a>
-                        {% endif%}
-                      {% endfor %}
-                      {% if answer.confiabilidad == "normal" %}
-                        <h1 style="color:blue">"{{ answer.contenido }}"</h1><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
-                      {% else %}
-                        <h1 style="color:brown">"{{ answer.contenido }}"</h1><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
-                      {% endif %}
-                      <!--<h6>Esta es un respuesta {{answer.confiabilidad}}</h6>-->
-                    {% endfor %}
+                    <div class="bb">
+                        {% for answer in resFiltradas %}<!-- respuestas de usuario-->
+                        <h1>Respondiste a la pregunta:  </h1>
+                        {% for someQuestion in allQuestions %}
+                            {% if someQuestion.id == answer.pregunta_id %}
+                            <a style="color:red" href="../pregunta/?id={{question.id}}">{{ someQuestion.enunciado }}</a>
+                            {% endif%}
+                        {% endfor %}
+                        {% if answer.confiabilidad == "normal" %}
+                            <h1 style="color:blue">"{{ answer.contenido }}"</h1><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
+                        {% else %}
+                            <h1 style="color:brown">"{{ answer.contenido }}"</h1><br><a href="../eliminarRespuesta/{{ answer.id }}">Eliminar Respuesta ...</a>
+                        {% endif %}
+                        <!--<h6>Esta es un respuesta {{answer.confiabilidad}}</h6>-->
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             {% endblock %}
