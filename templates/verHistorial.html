@@ -41,9 +41,12 @@
                     <div class="aa">
                     <h1>Preguntas recientes</h1>
                         <div class="bb">
+                            
                             {% for question in questions %}
+                            <h1>
                             <!--<button type="button" name="button" value="Editar Perfil" onclick="editarPerfil">Editar perfil</button>-->
                             <a href="../pregunta/?id={{question.id}}">{{ question.enunciado }}</a><br><a href="../eliminarPregunta/{{ question.id }}">Eliminar</a><br> 
+                            </h1>
                             {% endfor %}
                         </div>
                     </div>
