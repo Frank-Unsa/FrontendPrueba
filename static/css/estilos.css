@@ -662,11 +662,12 @@ h1{
     border: 2px;
     margin: auto;
     font-size: 50px;
-    line-height: 50px;
+    line-height: 2px;
     height: 90%;
 }
 .contenedor3 > div {
     display: block;
     background-color: #fff;
     height: 90%;
+    line-height: 2px;
 }
